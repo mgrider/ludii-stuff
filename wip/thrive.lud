@@ -1,0 +1,24 @@
+(game "Thrive"
+    (players 2)
+    (equipment
+      {
+         (board (square 6))
+         (piece "square" Each)
+      }
+    )
+    (rules
+        (start
+            {
+                (place "square1" (sites Row 0))
+                (place "square2" (sites Row 5))
+            }
+        )
+        (play
+            (move Add (to (sites Empty)))
+        )
+        (end {
+            (if (<= (count Pieces P2) 1) (result P1 Win))
+            (if (<= (count Pieces P1) 1) (result P2 Win))
+        })
+    )
+)

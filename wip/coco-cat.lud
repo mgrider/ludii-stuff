@@ -1,0 +1,13 @@
+(game "Coco-Cat"
+   (players 2)
+   (equipment
+      {
+         (board (square 6))
+         (piece "cat" Each)
+      }
+   )
+   (rules
+      (play (move Add (to (sites Empty))))
+      (end (if (is Line 5) (result Mover Win)))
+   )
+)
